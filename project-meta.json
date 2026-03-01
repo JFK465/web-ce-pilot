@@ -1,0 +1,11 @@
+{
+  "projektName": "ce-pilot",
+  "displayName": "CE-Pilot",
+  "domain": "ce-pilot.de",
+  "appDomain": "app.ce-pilot.de",
+  "zielgruppe": "Hersteller von Bauprodukten (Stahl, Beton, Fenster, Fassaden) im DACH-Raum — EN 1090-Betriebe, Betonfertigteil-Hersteller, Fenster/Türen/Fassaden-Hersteller",
+  "problem": "DoP-Erstellung manuell in Word/Excel, jedes Bauprodukt braucht eigene DoP + CE-Kennzeichnung, fehlerhafte CE = Inverkehrbringungsverbot + Bußgeld bis 100.000 EUR, Marktüberwachungsbehörden prüfen zunehmend",
+  "loesung": "Automatische DoP-Generierung, FPC-Zertifikat-Tracking, CE-Kennzeichnungs-Generator mit allen Pflichtangaben, WPK-Verknüpfung — EU-Bauproduktenverordnung (CPR 305/2011) konform",
+  "branche": "Bauprodukte / Stahlbau / Betonfertigteile / Fassadenbau",
+  "createdAt": "2026-02-28"
+}
