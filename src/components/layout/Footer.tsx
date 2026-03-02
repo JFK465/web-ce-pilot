@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
-import { FileCheck, Shield, MapPin } from "lucide-react";
+import { Shield, MapPin } from "lucide-react";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -30,9 +31,12 @@ export function Footer() {
         <div className="container-custom py-10">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <h3 className="text-lg font-semibold text-background">BauPVO 2024 Updates</h3>
+              <h3 className="text-lg font-semibold text-background">
+                BauPVO 2024 Updates
+              </h3>
               <p className="text-sm text-background/70 mt-1">
-                Aktuelle Infos zu BauPVO 2024, CE-Kennzeichnung und Norm-Änderungen.
+                Aktuelle Infos zu BauPVO 2024, CE-Kennzeichnung und
+                Norm-Änderungen.
               </p>
             </div>
             {subscribed ? (
@@ -40,7 +44,10 @@ export function Footer() {
                 Danke! Sie erhalten unsere Updates.
               </p>
             ) : (
-              <form onSubmit={handleNewsletter} className="flex gap-2 w-full md:w-auto">
+              <form
+                onSubmit={handleNewsletter}
+                className="flex gap-2 w-full md:w-auto"
+              >
                 <input
                   type="email"
                   value={email}
@@ -69,14 +76,19 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Produkt */}
           <div>
-            <h4 className="text-sm font-semibold text-background mb-4">Produkt</h4>
+            <h4 className="text-sm font-semibold text-background mb-4">
+              Produkt
+            </h4>
             <ul className="space-y-2">
               {[
                 { name: "Funktionen", href: "/funktionen" },
                 { name: "Preise", href: "/preise" },
                 { name: "CE-Software", href: "/ce-kennzeichnung-software" },
                 { name: "DoP-Pflichtcheck", href: "/tools/dop-pflichtcheck" },
-                { name: "CE-Kennzeichnungs-Check", href: "/tools/ce-kennzeichnung-check" },
+                {
+                  name: "CE-Kennzeichnungs-Check",
+                  href: "/tools/ce-kennzeichnung-check",
+                },
                 { name: "WPK-Countdown", href: "/tools/wpk-countdown" },
               ].map((link) => (
                 <li key={link.href}>
@@ -93,14 +105,25 @@ export function Footer() {
 
           {/* Ressourcen */}
           <div>
-            <h4 className="text-sm font-semibold text-background mb-4">Ressourcen</h4>
+            <h4 className="text-sm font-semibold text-background mb-4">
+              Ressourcen
+            </h4>
             <ul className="space-y-2">
               {[
                 { name: "Wissen & Ratgeber", href: "/wissen" },
                 { name: "BauPVO 2024", href: "/wissen/baupvo-2024" },
-                { name: "Leistungserklärung", href: "/wissen/leistungserklaerung-dop" },
-                { name: "EN 1090 CE", href: "/wissen/en-1090-ce-kennzeichnung" },
-                { name: "WPK / FPC-Zertifikat", href: "/wissen/wpk-fpc-zertifikat" },
+                {
+                  name: "Leistungserklärung",
+                  href: "/wissen/leistungserklaerung-dop",
+                },
+                {
+                  name: "EN 1090 CE",
+                  href: "/wissen/en-1090-ce-kennzeichnung",
+                },
+                {
+                  name: "WPK / FPC-Zertifikat",
+                  href: "/wissen/wpk-fpc-zertifikat",
+                },
                 { name: "Blog", href: "/blog" },
               ].map((link) => (
                 <li key={link.href}>
@@ -117,7 +140,9 @@ export function Footer() {
 
           {/* Branchen */}
           <div>
-            <h4 className="text-sm font-semibold text-background mb-4">Branchen</h4>
+            <h4 className="text-sm font-semibold text-background mb-4">
+              Branchen
+            </h4>
             <ul className="space-y-2">
               {[
                 { name: "Stahlbau & Metallbau", href: "/stahlbau-metallbau" },
@@ -140,7 +165,9 @@ export function Footer() {
 
           {/* Rechtliches */}
           <div>
-            <h4 className="text-sm font-semibold text-background mb-4">Rechtliches</h4>
+            <h4 className="text-sm font-semibold text-background mb-4">
+              Rechtliches
+            </h4>
             <ul className="space-y-2">
               {[
                 { name: "Kontakt", href: "/kontakt" },
@@ -166,10 +193,13 @@ export function Footer() {
       <div className="border-t border-background/10">
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="flex h-6 w-6 items-center justify-center rounded bg-primary text-primary-foreground">
-              <FileCheck className="h-4 w-4" />
-            </div>
-            <span className="text-sm font-semibold text-background">CE-Pilot</span>
+            <Image
+              src="/logo-dark.svg"
+              alt="CE-Pilot"
+              width={100}
+              height={24}
+              className="h-6 w-auto"
+            />
             <span className="text-sm text-background/50">
               © 2026 CE-Pilot. Alle Rechte vorbehalten.
             </span>
@@ -183,9 +213,7 @@ export function Footer() {
               <MapPin className="h-3.5 w-3.5" />
               Made in Germany
             </div>
-            <div className="text-xs text-background/50">
-              🔒 256-Bit SSL
-            </div>
+            <div className="text-xs text-background/50">🔒 256-Bit SSL</div>
           </div>
         </div>
       </div>

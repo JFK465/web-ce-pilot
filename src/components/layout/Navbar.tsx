@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, FileCheck } from "lucide-react";
+import Image from "next/image";
+import { ChevronDown, Menu, X } from "lucide-react";
 
 interface DropdownItem {
   name: string;
@@ -35,7 +36,11 @@ function DropdownMenu({ dropdown }: { dropdown: NavDropdownConfig }) {
   }, []);
 
   return (
-    <div className="relative" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+    <div
+      className="relative"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
       <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground transition-colors rounded-md hover:bg-muted/50">
         {dropdown.label}
         <ChevronDown
@@ -55,7 +60,9 @@ function DropdownMenu({ dropdown }: { dropdown: NavDropdownConfig }) {
                   className="block px-3 py-2.5 rounded-md text-sm hover:bg-muted transition-colors"
                   onClick={() => setOpen(false)}
                 >
-                  <span className="font-medium text-foreground">{item.name}</span>
+                  <span className="font-medium text-foreground">
+                    {item.name}
+                  </span>
                   {item.description && (
                     <span className="block text-xs text-muted-foreground mt-0.5">
                       {item.description}
@@ -75,31 +82,91 @@ const navDropdowns: NavDropdownConfig[] = [
   {
     label: "Produkt",
     items: [
-      { name: "Funktionen", href: "/funktionen", description: "Alle Features im Überblick" },
-      { name: "CE-Kennzeichnung Software", href: "/ce-kennzeichnung-software", description: "Software Landing Page" },
-      { name: "DoP-Pflichtcheck", href: "/tools/dop-pflichtcheck", description: "Kostenloser Online-Check" },
-      { name: "CE-Kennzeichnungs-Check", href: "/tools/ce-kennzeichnung-check", description: "CE-Prüfung online" },
+      {
+        name: "Funktionen",
+        href: "/funktionen",
+        description: "Alle Features im Überblick",
+      },
+      {
+        name: "CE-Kennzeichnung Software",
+        href: "/ce-kennzeichnung-software",
+        description: "Software Landing Page",
+      },
+      {
+        name: "DoP-Pflichtcheck",
+        href: "/tools/dop-pflichtcheck",
+        description: "Kostenloser Online-Check",
+      },
+      {
+        name: "CE-Kennzeichnungs-Check",
+        href: "/tools/ce-kennzeichnung-check",
+        description: "CE-Prüfung online",
+      },
     ],
   },
   {
     label: "Branchen",
     items: [
-      { name: "Stahlbau & Metallbau", href: "/stahlbau-metallbau", description: "EN 1090-1 Leistungserklärungen" },
-      { name: "Betonfertigteile", href: "/betonfertigteile", description: "DoP nach EN 13369" },
-      { name: "Fenster & Türen", href: "/fenster-tueren", description: "CE nach EN 14351-1" },
-      { name: "Fassadenbau", href: "/fassadenbau", description: "DoP Vorhangfassaden" },
-      { name: "Allgemeine Bauprodukte", href: "/bauprodukte-allgemein", description: "Alle Produktgruppen" },
+      {
+        name: "Stahlbau & Metallbau",
+        href: "/stahlbau-metallbau",
+        description: "EN 1090-1 Leistungserklärungen",
+      },
+      {
+        name: "Betonfertigteile",
+        href: "/betonfertigteile",
+        description: "DoP nach EN 13369",
+      },
+      {
+        name: "Fenster & Türen",
+        href: "/fenster-tueren",
+        description: "CE nach EN 14351-1",
+      },
+      {
+        name: "Fassadenbau",
+        href: "/fassadenbau",
+        description: "DoP Vorhangfassaden",
+      },
+      {
+        name: "Allgemeine Bauprodukte",
+        href: "/bauprodukte-allgemein",
+        description: "Alle Produktgruppen",
+      },
     ],
   },
   {
     label: "Wissen",
     items: [
-      { name: "Bauproduktenverordnung CPR", href: "/wissen/bauproduktenverordnung-cpr", description: "CPR 305/2011 erklärt" },
-      { name: "BauPVO 2024", href: "/wissen/baupvo-2024", description: "Neue Regelungen ab Jan. 2026" },
-      { name: "Leistungserklärung (DoP)", href: "/wissen/leistungserklaerung-dop", description: "Pflichtangaben nach CPR" },
-      { name: "EN 1090 CE-Kennzeichnung", href: "/wissen/en-1090-ce-kennzeichnung", description: "Für Stahlbau-Betriebe" },
-      { name: "WPK / FPC-Zertifikat", href: "/wissen/wpk-fpc-zertifikat", description: "Ablauf und Überwachung" },
-      { name: "Marktüberwachung", href: "/wissen/marktueberwachung-bauprodukte", description: "Behördliche Kontrollen" },
+      {
+        name: "Bauproduktenverordnung CPR",
+        href: "/wissen/bauproduktenverordnung-cpr",
+        description: "CPR 305/2011 erklärt",
+      },
+      {
+        name: "BauPVO 2024",
+        href: "/wissen/baupvo-2024",
+        description: "Neue Regelungen ab Jan. 2026",
+      },
+      {
+        name: "Leistungserklärung (DoP)",
+        href: "/wissen/leistungserklaerung-dop",
+        description: "Pflichtangaben nach CPR",
+      },
+      {
+        name: "EN 1090 CE-Kennzeichnung",
+        href: "/wissen/en-1090-ce-kennzeichnung",
+        description: "Für Stahlbau-Betriebe",
+      },
+      {
+        name: "WPK / FPC-Zertifikat",
+        href: "/wissen/wpk-fpc-zertifikat",
+        description: "Ablauf und Überwachung",
+      },
+      {
+        name: "Marktüberwachung",
+        href: "/wissen/marktueberwachung-bauprodukte",
+        description: "Behördliche Kontrollen",
+      },
       { name: "Blog", href: "/blog", description: "Aktuelle Artikel & Guides" },
     ],
   },
@@ -125,9 +192,13 @@ export function Navbar() {
       <div className="container-custom flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-lg">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <FileCheck className="h-5 w-5" />
-          </div>
+          <Image
+            src="/logo-icon.svg"
+            alt="CE-Pilot Logo"
+            width={32}
+            height={32}
+            className="h-8 w-8"
+          />
           <span className="text-foreground">CE-Pilot</span>
         </Link>
 
@@ -166,7 +237,11 @@ export function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Navigation öffnen"
         >
-          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {mobileOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <Menu className="h-5 w-5" />
+          )}
         </button>
       </div>
 
@@ -180,7 +255,7 @@ export function Navbar() {
                   className="flex w-full items-center justify-between px-3 py-2 text-sm font-medium hover:bg-muted rounded-md transition-colors"
                   onClick={() =>
                     setMobileExpanded(
-                      mobileExpanded === dropdown.label ? null : dropdown.label
+                      mobileExpanded === dropdown.label ? null : dropdown.label,
                     )
                   }
                 >
