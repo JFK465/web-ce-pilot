@@ -34,7 +34,7 @@ const wissenThemen = [
     readTime: "10 Min.",
   },
   {
-    href: "/wissen/leistungserklaerung-dop",
+    href: "/wissen/leistungserklärung-dop",
     title: "Leistungserklärung (DoP) — Pflichtangaben nach CPR",
     description:
       "Alle Pflichtfelder nach CPR Anhang III. Wer muss eine DoP ausstellen? Wie wird sie erstellt?",
@@ -55,7 +55,7 @@ const wissenThemen = [
     readTime: "7 Min.",
   },
   {
-    href: "/wissen/marktueberwachung-bauprodukte",
+    href: "/wissen/marktüberwachung-bauprodukte",
     title: "Marktüberwachung Bauprodukte Deutschland",
     description:
       "Wie prüfen Marktüberwachungsbehörden? Welche Konsequenzen drohen bei fehlender CE?",

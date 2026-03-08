@@ -9,23 +9,23 @@ export const metadata: Metadata = {
   title: "Leistungserklärung (DoP) – Pflichtangaben CPR Anhang III | CE-Pilot",
   description:
     "Alle Pflichtangaben der Leistungserklärung (DoP) nach CPR Anhang III und BauPVO 2024/3110: Wer muss ausstellen? GWP-Felder, kombinierte Erklärung erklärt.",
-  alternates: { canonical: `${siteConfig.url}/wissen/leistungserklaerung-dop` },
+  alternates: { canonical: `${siteConfig.url}/wissen/leistungserklärung-dop` },
   openGraph: {
     title:
       "Leistungserklärung (DoP) – Pflichtangaben CPR Anhang III | CE-Pilot",
     description:
       "Alle Pflichtangaben der DoP nach CPR Anhang III und BauPVO 2024: Wer muss ausstellen? GWP-Felder, kombinierte Erklärung, AVCP erklärt.",
-    url: `${siteConfig.url}/wissen/leistungserklaerung-dop`,
+    url: `${siteConfig.url}/wissen/leistungserklärung-dop`,
   },
 };
 
-export default function LeistungserklaerungPage() {
+export default function LeistungserklärungPage() {
   return (
     <>
       <WebPageSchema
         title="Leistungserklärung (DoP) Pflichtangaben"
         description="Pflichtangaben nach CPR Anhang III und BauPVO 2024"
-        url="/wissen/leistungserklaerung-dop"
+        url="/wissen/leistungserklärung-dop"
       />
       <div className="py-16 md:py-24">
         <div className="container-custom max-w-4xl">
@@ -34,7 +34,7 @@ export default function LeistungserklaerungPage() {
               { label: "Wissen", href: "/wissen" },
               {
                 label: "Leistungserklärung DoP",
-                href: "/wissen/leistungserklaerung-dop",
+                href: "/wissen/leistungserklärung-dop",
               },
             ]}
           />

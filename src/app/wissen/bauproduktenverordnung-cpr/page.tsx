@@ -90,7 +90,7 @@ export default function BauproduktenverordnungPage() {
             {[
               { href: "/wissen/baupvo-2024", label: "BauPVO 2024 Änderungen" },
               {
-                href: "/wissen/leistungserklaerung-dop",
+                href: "/wissen/leistungserklärung-dop",
                 label: "Leistungserklärung (DoP)",
               },
               {

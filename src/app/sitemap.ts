@@ -96,7 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${base}/wissen/leistungserklaerung-dop`,
+      url: `${base}/wissen/leistungserklärung-dop`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
@@ -114,7 +114,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${base}/wissen/marktueberwachung-bauprodukte`,
+      url: `${base}/wissen/marktüberwachung-bauprodukte`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,

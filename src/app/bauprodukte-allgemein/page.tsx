@@ -63,7 +63,7 @@ export default function BauprodukteAllgemeinPage() {
               },
               { href: "/fassadenbau", name: "Fassadenbau", norm: "EN 13830" },
               {
-                href: "/wissen/leistungserklaerung-dop",
+                href: "/wissen/leistungserklärung-dop",
                 name: "Sonstige Bauprodukte",
                 norm: "CPR Anhang III",
               },

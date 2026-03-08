@@ -10,23 +10,23 @@ export const metadata: Metadata = {
   description:
     "Wie kontrollieren Marktüberwachungsbehörden CE-Kennzeichnungen? Konsequenzen bis 100.000 EUR Bußgeld. Was Kontrolleure prüfen — für Bauprodukt-Hersteller erklärt.",
   alternates: {
-    canonical: `${siteConfig.url}/wissen/marktueberwachung-bauprodukte`,
+    canonical: `${siteConfig.url}/wissen/marktüberwachung-bauprodukte`,
   },
   openGraph: {
     title: "Marktüberwachung Bauprodukte – Was prüfen Behörden? | CE-Pilot",
     description:
       "Wie Marktüberwachungsbehörden CE-Kennzeichnungen prüfen — Konsequenzen bis 100.000 EUR Bußgeld und Inverkehrbringungsverbote.",
-    url: `${siteConfig.url}/wissen/marktueberwachung-bauprodukte`,
+    url: `${siteConfig.url}/wissen/marktüberwachung-bauprodukte`,
   },
 };
 
-export default function MarktueberwachungPage() {
+export default function MarktüberwachungPage() {
   return (
     <>
       <WebPageSchema
         title="Marktüberwachung Bauprodukte"
         description="Wie Behörden CE-Kennzeichnungen von Bauprodukten kontrollieren"
-        url="/wissen/marktueberwachung-bauprodukte"
+        url="/wissen/marktüberwachung-bauprodukte"
       />
       <div className="py-16 md:py-24">
         <div className="container-custom max-w-4xl">
@@ -35,7 +35,7 @@ export default function MarktueberwachungPage() {
               { label: "Wissen", href: "/wissen" },
               {
                 label: "Marktüberwachung",
-                href: "/wissen/marktueberwachung-bauprodukte",
+                href: "/wissen/marktüberwachung-bauprodukte",
               },
             ]}
           />
@@ -85,7 +85,7 @@ export default function MarktueberwachungPage() {
               },
               { href: "/wissen/wpk-fpc-zertifikat", label: "WPK-Zertifikat" },
               {
-                href: "/blog/marktueberwachung-kontrolle",
+                href: "/blog/marktüberwachung-kontrolle",
                 label: "Blog: Marktüberwachung",
               },
             ].map((l) => (

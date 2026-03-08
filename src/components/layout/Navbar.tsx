@@ -149,7 +149,7 @@ const navDropdowns: NavDropdownConfig[] = [
       },
       {
         name: "Leistungserklärung (DoP)",
-        href: "/wissen/leistungserklaerung-dop",
+        href: "/wissen/leistungserklärung-dop",
         description: "Pflichtangaben nach CPR",
       },
       {
@@ -164,7 +164,7 @@ const navDropdowns: NavDropdownConfig[] = [
       },
       {
         name: "Marktüberwachung",
-        href: "/wissen/marktueberwachung-bauprodukte",
+        href: "/wissen/marktüberwachung-bauprodukte",
         description: "Behördliche Kontrollen",
       },
       { name: "Blog", href: "/blog", description: "Aktuelle Artikel & Guides" },

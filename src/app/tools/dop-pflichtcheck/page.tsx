@@ -74,7 +74,7 @@ export default function DopPflichtcheckPage() {
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               {
-                href: "/wissen/leistungserklaerung-dop",
+                href: "/wissen/leistungserklärung-dop",
                 label: "Pflichtangaben DoP erklärt",
               },
               { href: "/wissen/baupvo-2024", label: "BauPVO 2024 Änderungen" },

@@ -809,7 +809,7 @@ function CrossLinksSection() {
       icon: ChevronRight,
     },
     {
-      href: "/wissen/leistungserklaerung-dop",
+      href: "/wissen/leistungserklärung-dop",
       label: "Leistungserklärung erklärt",
       icon: ChevronRight,
     },

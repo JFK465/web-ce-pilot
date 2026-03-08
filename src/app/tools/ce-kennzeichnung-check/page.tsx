@@ -66,7 +66,7 @@ export default function CeKennzeichnungCheckPage() {
                 label: "Bauproduktenverordnung erklärt",
               },
               {
-                href: "/wissen/leistungserklaerung-dop",
+                href: "/wissen/leistungserklärung-dop",
                 label: "Leistungserklärung (DoP)",
               },
               { href: "/tools/dop-pflichtcheck", label: "DoP-Pflichtcheck" },

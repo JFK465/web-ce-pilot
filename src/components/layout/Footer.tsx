@@ -114,7 +114,7 @@ export function Footer() {
                 { name: "BauPVO 2024", href: "/wissen/baupvo-2024" },
                 {
                   name: "Leistungserklärung",
-                  href: "/wissen/leistungserklaerung-dop",
+                  href: "/wissen/leistungserklärung-dop",
                 },
                 {
                   name: "EN 1090 CE",
