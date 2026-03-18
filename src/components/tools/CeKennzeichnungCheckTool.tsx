@@ -23,10 +23,14 @@ export function CeKennzeichnungCheckTool() {
     <>
       <div className="border border-border rounded-xl p-8 space-y-6 bg-card">
         <div>
-          <label className="block font-medium text-sm mb-2">
+          <label
+            htmlFor="produktkategorie"
+            className="block font-medium text-sm mb-2"
+          >
             1. Welche Produktkategorie?
           </label>
           <input
+            id="produktkategorie"
             type="text"
             value={produktkategorie}
             onChange={(e) => setProductkategorie(e.target.value)}

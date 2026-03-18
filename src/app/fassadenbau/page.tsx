@@ -60,7 +60,7 @@ export default function FassadenbauPage() {
                 key={f.title}
                 className="bg-card border border-border rounded-xl p-6"
               >
-                <h3 className="font-semibold mb-2">{f.title}</h3>
+                <h2 className="font-semibold mb-2">{f.title}</h2>
                 <p className="text-sm text-muted-foreground">{f.text}</p>
               </div>
             ))}
