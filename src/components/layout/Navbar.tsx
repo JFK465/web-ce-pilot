@@ -218,12 +218,6 @@ export function Navbar() {
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
           <Link
-            href="https://app.ce-pilot.de"
-            className="px-4 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors rounded-md border border-transparent hover:border-border"
-          >
-            Anmelden
-          </Link>
-          <Link
             href="/ce-kennzeichnung-software#beta-anmeldung"
             className="px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
           >
@@ -290,13 +284,6 @@ export function Navbar() {
               Preise
             </Link>
             <div className="pt-4 border-t space-y-2">
-              <Link
-                href="https://app.ce-pilot.de"
-                className="block w-full text-center px-4 py-2 text-sm font-medium border border-border rounded-md hover:bg-muted transition-colors"
-                onClick={() => setMobileOpen(false)}
-              >
-                Anmelden
-              </Link>
               <Link
                 href="/ce-kennzeichnung-software#beta-anmeldung"
                 className="block w-full text-center px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
