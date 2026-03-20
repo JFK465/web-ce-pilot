@@ -1,18 +1,3 @@
-<!-- @license lucide-static v0.469.0 - ISC -->
-<svg role="img" aria-label="CE-Pilot Logo"
-  class="lucide lucide-hard-hat"
-  xmlns="http://www.w3.org/2000/svg"
-  width="40"
-  height="40"
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="#FFFFFF"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5" />
-  <path d="M14 6a6 6 0 0 1 6 6v3" />
-  <path d="M4 15v-3a6 6 0 0 1 6-6" />
-  <rect x="2" y="15" width="20" height="4" rx="1" />
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" role="img" aria-label="CE-Pilot Logo">
+  <image width="40" height="40" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAPoAAAD6AG1e1JrAAADoUlEQVR4nO2YaYiOURTH3xkkKWWJJHskJJKP4oNPpJSyhU+KD7KOLWtKBpO1rGVIIfsSQrZMpkQiJMkW44M924zl/HRe/8v1Rsz7vB8m3lO3e+/zzHvv//7POf97nkml8pa3vP3jBhQAtbNstfz3qZpuQKEAF+Zy0fTJgebAFGCWmc3wBszM6KepFQHTfaznQ4FmmeuK2WTs+onVr+SbfaJ6Zuo/AMeBCUAnB5acvp8Bro0AfgQqgSoz++zPvNf4i95XqWFm98zsokCm1zCzK8BioDdQLwnAdLwAHYA9wIOIFe/fRfMvGQyH56+BS8Ap4KwDBt6E92Y2T3skZ9XMGphZH2AhcAMoA55oo8dAKXAYOA1cM7OXgcnIA2/N7L284LYqMcAQ1Bms9gAOOCsRg+7eR8B14BywT39zAjhvZs+BcmAqMB4YB7QKe+RCJtJSoXkXuf1UBPB39gqoMLMXQM/4oDkxMVgQQGYA3CO3uYufeK9xReiBZwLp4dAuOnB6zcTg1HcH2kbPOwvcMMVk0EHXytlhrvFM6aO30cBg6WPXeI8k4JoAe4ExQFM96wrsBiaa2TZgE7BFmrlUCePzYmC15puBJcA6YIPHJdA3MJoNwJAYHsxrpIcutvWBjsAuYL/izKUDbe4bo0xdYGYPNX8KjJRstdRNU5wYoGsVsBFYBiw3s8nACGCrmR39LnzfsrQ40sDL+l2wY8AArVlX65TkgsG5cslSuXCaALoLj0QADqsRsXkzukHmhSRxgPJGSa5c7HG03mMuw8U7pX9PPSHM7L6uNRfy+e56CbOL93CgNdAQaAHM8SsvCcCQJI2VJGNDZRIlSZHelSoBdqitF9vhEMuBFWK9VElV5jdT1gB/ITNtfiEzQ50JxdN0M5ukcZFkxueTNJ+q0BiiZOkW75FroQ4AD7mLPUHUXqq9kNufq2ColFh3TMRYNa86d/HJP111HoNmdhW4BRwEBkmsBwKNAglJwH2/kqK+m2LvpEB8juQlLrMOCNQ1JUuoavw9URYnq2ZCuQX0AxYBdyQxdyNQXlpdUGJsV+XyKgi5WCyX+1E9OSo+eFbAgPba8FHEUqWKAYtdKda8QAh2W1l8QkUDWsclqGW8TzYAQ7ytiVxTFQpOufVjaJqnsUafBBURi66NY9wTAViuPppKIoDVMROzZ4D+QJ0IWPJP0MjFzbwCdn0Luva3DegVrydgNetDnh/fwQU18l8fqbzlLW//uX0FQA5PrZz7JKwAAAAASUVORK5CYII=" />
 </svg>
