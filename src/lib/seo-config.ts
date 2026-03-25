@@ -2,8 +2,8 @@ export const siteConfig = {
   name: "CE-Pilot",
   description:
     "CE-Kennzeichnung und Leistungserklärung für Bauprodukte normkonform in 20 Minuten: DoP-Generator nach BauPVO 2024, WPK-Tracking, CE-Label-Export. DSGVO-konform, Made in Germany.",
-  url: "https://ce-pilot.de",
-  appUrl: "https://app.ce-pilot.de",
+  url: "https://leistungserklaerung-software.de",
+  appUrl: "https://app.leistungserklaerung-software.de",
   ogImage: "/og.png",
   keywords: [
     "CE-Kennzeichnung Software Bauprodukte",
