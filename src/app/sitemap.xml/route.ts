@@ -47,12 +47,6 @@ function buildEntries(): SitemapEntry[] {
       changefreq: "monthly",
       priority: 0.8,
     },
-    {
-      url: `${base}/kontakt`,
-      lastmod: new Date().toISOString(),
-      changefreq: "yearly",
-      priority: 0.5,
-    },
     // Branchen
     {
       url: `${base}/stahlbau-metallbau`,
