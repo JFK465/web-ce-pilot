@@ -10,7 +10,7 @@ export function SEOContentSection() {
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4">
             Seit der Verordnung (EU) 305/2011 (Bauproduktenverordnung, CPR) müssen Hersteller von Bauprodukten,
-            die unter eine <Link href="/wissen/leistungserklärung-dop" className="text-primary hover:underline">harmonisierte technische Norm (hEN) fallen</Link>,
+            die unter eine <Link href="/wissen/leistungserklaerung-dop" className="text-primary hover:underline">harmonisierte technische Norm (hEN) fallen</Link>,
             eine Leistungserklärung (DoP) ausstellen und das CE-Zeichen anbringen. Mit der neuen{" "}
             <Link href="/wissen/baupvo-2024" className="text-primary hover:underline">BauPVO 2024/3110 (EU) 2024/3110</Link>{" "}
             wurden die Anforderungen ab 8. Januar 2026 deutlich verschärft: Die kombinierte Leistungs- und
@@ -35,7 +35,7 @@ export function SEOContentSection() {
             um zu prüfen, ob Ihre aktuellen Leistungserklärungen den neuen Anforderungen der BauPVO 2024 genügen.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Die <Link href="/wissen/marktüberwachung-bauprodukte" className="text-primary hover:underline">Marktüberwachungsbehörden</Link>{" "}
+            Die <Link href="/wissen/marktueberwachung-bauprodukte" className="text-primary hover:underline">Marktüberwachungsbehörden</Link>{" "}
             der Bundesländer intensivieren ihre Kontrollen. Wer jetzt handelt und seine CE-Dokumentation
             systematisch digitalisiert, schützt sein Unternehmen vor kostspieligen Beanstandungen und ist für
             den <Link href="/wissen/digitaler-produktpass" className="text-primary hover:underline">digitalen Produktpass</Link>{" "}

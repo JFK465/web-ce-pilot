@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Wie kontrollieren Marktüberwachungsbehörden CE-Kennzeichnungen? Konsequenzen bis 100.000 EUR Bußgeld. Was Kontrolleure prüfen — für Bauprodukt-Hersteller erklärt.",
   alternates: {
-    canonical: `${siteConfig.url}/wissen/marktüberwachung-bauprodukte`,
+    canonical: `${siteConfig.url}/wissen/marktueberwachung-bauprodukte`,
   },
   openGraph: {
     title: "Marktüberwachung Bauprodukte – Was prüfen Behörden? | CE-Pilot",

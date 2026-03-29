@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Leistungserklärung (DoP) – Pflichtangaben CPR Anhang III | CE-Pilot",
   description:
     "Alle Pflichtangaben der Leistungserklärung (DoP) nach CPR Anhang III und BauPVO 2024/3110: Wer muss ausstellen? GWP-Felder, kombinierte Erklärung erklärt.",
-  alternates: { canonical: `${siteConfig.url}/wissen/leistungserklärung-dop` },
+  alternates: { canonical: `${siteConfig.url}/wissen/leistungserklaerung-dop` },
   openGraph: {
     title:
       "Leistungserklärung (DoP) – Pflichtangaben CPR Anhang III | CE-Pilot",
