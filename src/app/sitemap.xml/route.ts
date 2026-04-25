@@ -1,160 +1,82 @@
-import { siteConfig } from "@/lib/seo-config";
-import { getBlogPosts } from "@/lib/blog";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { getGitLastmod } from "@/lib/sitemap-lastmod";
 
-interface SitemapEntry {
+// Build-time static generation: getGitLastmod nutzt git CLI, das nur
+// im Build-Container verfuegbar ist, nicht in Vercel-Serverless-Runtime.
+// Sitemap wird bei jedem Deploy regeneriert.
+export const dynamic = "force-static";
+
+const CONTENT_DIR = path.join(process.cwd(), "content/blog");
+
+function getBlogPosts() {
+  if (!fs.existsSync(CONTENT_DIR)) return [];
+  const files = fs.readdirSync(CONTENT_DIR);
+  return files
+    .filter((file) => file.endsWith(".md") || file.endsWith(".mdx"))
+    .map((file) => {
+      const filePath = path.join(CONTENT_DIR, file);
+      const fileContents = fs.readFileSync(filePath, "utf8");
+      const { data } = matter(fileContents);
+      return {
+        slug: file.replace(/\.(md|mdx)$/, ""),
+        date: data.date || null,
+      };
+    });
+}
+
+interface SitemapSource {
   url: string;
-  lastmod: string;
+  source: string;
   changefreq: string;
   priority: number;
 }
 
-function buildEntries(): SitemapEntry[] {
-  const base = siteConfig.url;
+interface SitemapEntry extends SitemapSource {
+  lastmod: string;
+}
 
-  // Dynamische Blog-Posts aus MDX-Dateien
-  const blogPosts = getBlogPosts().map((post) => ({
-    url: `${base}/blog/${post.slug}`,
-    lastmod: post.date
-      ? new Date(post.date).toISOString()
-      : new Date().toISOString(),
-    changefreq: "monthly",
-    priority: 0.6,
+const STATIC_SOURCES: SitemapSource[] = [
+  { url: "https://leistungserklaerung-software.de/ce-kennzeichnung-software", source: "src/app/ce-kennzeichnung-software/page.tsx", changefreq: "weekly", priority: 0.9 },
+  { url: "https://leistungserklaerung-software.de/funktionen", source: "src/app/funktionen/page.tsx", changefreq: "monthly", priority: 0.8 },
+  { url: "https://leistungserklaerung-software.de/preise", source: "src/app/preise/page.tsx", changefreq: "monthly", priority: 0.8 },
+  { url: "https://leistungserklaerung-software.de/stahlbau-metallbau", source: "src/app/stahlbau-metallbau/page.tsx", changefreq: "monthly", priority: 0.7 },
+  { url: "https://leistungserklaerung-software.de/betonfertigteile", source: "src/app/betonfertigteile/page.tsx", changefreq: "monthly", priority: 0.7 },
+  { url: "https://leistungserklaerung-software.de/fenster-tueren", source: "src/app/fenster-tueren/page.tsx", changefreq: "monthly", priority: 0.7 },
+  { url: "https://leistungserklaerung-software.de/fassadenbau", source: "src/app/fassadenbau/page.tsx", changefreq: "monthly", priority: 0.7 },
+  { url: "https://leistungserklaerung-software.de/bauprodukte-allgemein", source: "src/app/bauprodukte-allgemein/page.tsx", changefreq: "monthly", priority: 0.7 },
+  { url: "https://leistungserklaerung-software.de/wissen", source: "src/app/wissen/page.tsx", changefreq: "weekly", priority: 0.7 },
+  { url: "https://leistungserklaerung-software.de/wissen/bauproduktenverordnung-cpr", source: "src/app/wissen/bauproduktenverordnung-cpr/page.tsx", changefreq: "monthly", priority: 0.7 },
+  { url: "https://leistungserklaerung-software.de/wissen/baupvo-2024", source: "src/app/wissen/baupvo-2024/page.tsx", changefreq: "monthly", priority: 0.7 },
+  { url: "https://leistungserklaerung-software.de/wissen/en-1090-ce-kennzeichnung", source: "src/app/wissen/en-1090-ce-kennzeichnung/page.tsx", changefreq: "monthly", priority: 0.7 },
+  { url: "https://leistungserklaerung-software.de/wissen/wpk-fpc-zertifikat", source: "src/app/wissen/wpk-fpc-zertifikat/page.tsx", changefreq: "monthly", priority: 0.7 },
+  { url: "https://leistungserklaerung-software.de/wissen/digitaler-produktpass", source: "src/app/wissen/digitaler-produktpass/page.tsx", changefreq: "monthly", priority: 0.7 },
+  { url: "https://leistungserklaerung-software.de/tools/dop-pflichtcheck", source: "src/app/tools/dop-pflichtcheck/page.tsx", changefreq: "monthly", priority: 0.6 },
+  { url: "https://leistungserklaerung-software.de/tools/ce-kennzeichnung-check", source: "src/app/tools/ce-kennzeichnung-check/page.tsx", changefreq: "monthly", priority: 0.6 },
+  { url: "https://leistungserklaerung-software.de/tools/wpk-countdown", source: "src/app/tools/wpk-countdown/page.tsx", changefreq: "monthly", priority: 0.6 },
+  { url: "https://leistungserklaerung-software.de/blog", source: "src/app/blog/page.tsx", changefreq: "weekly", priority: 0.7 },
+];
+
+function buildEntries(): SitemapEntry[] {
+  const staticEntries = STATIC_SOURCES.map((s) => ({
+    ...s,
+    lastmod: getGitLastmod(s.source),
   }));
 
-  return [
-    // Core Pages
-    {
-      url: base,
-      lastmod: new Date().toISOString(),
-      changefreq: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${base}/ce-kennzeichnung-software`,
-      lastmod: new Date().toISOString(),
-      changefreq: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${base}/funktionen`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${base}/preise`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.8,
-    },
-    // Branchen
-    {
-      url: `${base}/stahlbau-metallbau`,
-      lastmod: new Date().toISOString(),
+  const blogPosts = getBlogPosts();
+  const blogEntries: SitemapEntry[] = blogPosts.map((post) => {
+    const source = `content/blog/${post.slug}.md`;
+    return {
+      url: `https://leistungserklaerung-software.de/blog/${post.slug}`,
+      source,
+      lastmod: post.date ? new Date(post.date).toISOString() : getGitLastmod(source),
       changefreq: "monthly",
       priority: 0.7,
-    },
-    {
-      url: `${base}/betonfertigteile`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/fenster-tueren`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/fassadenbau`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/bauprodukte-allgemein`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.7,
-    },
-    // Wissen
-    {
-      url: `${base}/wissen`,
-      lastmod: new Date().toISOString(),
-      changefreq: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/wissen/bauproduktenverordnung-cpr`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/wissen/baupvo-2024`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/wissen/leistungserkl\u00e4rung-dop`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/wissen/en-1090-ce-kennzeichnung`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/wissen/wpk-fpc-zertifikat`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/wissen/markt\u00fcberwachung-bauprodukte`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${base}/wissen/digitaler-produktpass`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.7,
-    },
-    // Tools
-    {
-      url: `${base}/tools/dop-pflichtcheck`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${base}/tools/ce-kennzeichnung-check`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${base}/tools/wpk-countdown`,
-      lastmod: new Date().toISOString(),
-      changefreq: "monthly",
-      priority: 0.6,
-    },
-    // Blog
-    {
-      url: `${base}/blog`,
-      lastmod: new Date().toISOString(),
-      changefreq: "weekly",
-      priority: 0.7,
-    },
-    ...blogPosts,
-  ];
+    };
+  });
+
+  return [...staticEntries, ...blogEntries];
 }
 
 function toXml(entries: SitemapEntry[]): string {
@@ -170,7 +92,6 @@ function toXml(entries: SitemapEntry[]): string {
     .join("\n");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls}
 </urlset>`;
